@@ -1,0 +1,344 @@
+/********************************************************************************
+** Form generated from reading UI file 'mainwindow.ui'
+**
+** Created by: Qt User Interface Compiler version 6.9.3
+**
+** WARNING! All changes made in this file will be lost when recompiling UI file!
+********************************************************************************/
+
+#ifndef UI_MAINWINDOW_H
+#define UI_MAINWINDOW_H
+
+#include <QtCore/QVariant>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSpinBox>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QWidget>
+
+QT_BEGIN_NAMESPACE
+
+class Ui_MainWindow
+{
+public:
+    QWidget *centralwidget;
+    QFrame *frame;
+    QLabel *label_3;
+    QFrame *frame_2;
+    QFrame *line;
+    QFrame *line_2;
+    QRadioButton *radioButton;
+    QRadioButton *radioButton_2;
+    QLabel *label;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_2;
+    QLabel *label_2;
+    QFrame *frame_3;
+    QFrame *line_3;
+    QLabel *label_4;
+    QSpinBox *spinBox;
+    QSpinBox *spinBox_2;
+    QLabel *label_5;
+    QLabel *label_6;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QTableWidget *tablaMascaras;
+    QTableWidget *tablaSubRedes;
+    QStatusBar *statusbar;
+
+    void setupUi(QMainWindow *MainWindow)
+    {
+        if (MainWindow->objectName().isEmpty())
+            MainWindow->setObjectName("MainWindow");
+        MainWindow->resize(800, 680);
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(248, 255, 176);"));
+        centralwidget = new QWidget(MainWindow);
+        centralwidget->setObjectName("centralwidget");
+        frame = new QFrame(centralwidget);
+        frame->setObjectName("frame");
+        frame->setGeometry(QRect(0, 0, 800, 50));
+        frame->setStyleSheet(QString::fromUtf8("border-color: rgb(0, 0, 0);\n"
+"background-color: rgb(255, 255, 127);\n"
+"border: 2px solid black;"));
+        frame->setFrameShape(QFrame::Shape::Box);
+        frame->setFrameShadow(QFrame::Shadow::Plain);
+        frame->setLineWidth(2);
+        frame->setMidLineWidth(2);
+        label_3 = new QLabel(frame);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(2, 2, 796, 46));
+        label_3->setStyleSheet(QString::fromUtf8("border: none;\n"
+"color: rgb(0, 0, 0);"));
+        label_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        frame_2 = new QFrame(centralwidget);
+        frame_2->setObjectName("frame_2");
+        frame_2->setGeometry(QRect(0, 50, 800, 60));
+        frame_2->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 127);\n"
+"border: 2px solid black;\n"
+""));
+        frame_2->setFrameShape(QFrame::Shape::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Shadow::Raised);
+        line = new QFrame(frame_2);
+        line->setObjectName("line");
+        line->setGeometry(QRect(400, 0, 3, 30));
+        line->setFrameShape(QFrame::Shape::VLine);
+        line->setFrameShadow(QFrame::Shadow::Sunken);
+        line_2 = new QFrame(frame_2);
+        line_2->setObjectName("line_2");
+        line_2->setGeometry(QRect(0, 30, 800, 3));
+        line_2->setFrameShape(QFrame::Shape::HLine);
+        line_2->setFrameShadow(QFrame::Shadow::Sunken);
+        radioButton = new QRadioButton(frame_2);
+        radioButton->setObjectName("radioButton");
+        radioButton->setGeometry(QRect(100, 2, 200, 26));
+        radioButton->setStyleSheet(QString::fromUtf8("border: none;\n"
+"color: rgb(0, 0, 0);"));
+        radioButton_2 = new QRadioButton(frame_2);
+        radioButton_2->setObjectName("radioButton_2");
+        radioButton_2->setGeometry(QRect(500, 2, 200, 26));
+        radioButton_2->setStyleSheet(QString::fromUtf8("border: none;\n"
+"color: rgb(0, 0, 0);"));
+        label = new QLabel(frame_2);
+        label->setObjectName("label");
+        label->setGeometry(QRect(40, 33, 150, 24));
+        label->setStyleSheet(QString::fromUtf8("border: none;\n"
+"color: rgb(0, 0, 0);"));
+        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        lineEdit = new QLineEdit(frame_2);
+        lineEdit->setObjectName("lineEdit");
+        lineEdit->setGeometry(QRect(230, 35, 150, 20));
+        lineEdit->setStyleSheet(QString::fromUtf8("border: none;\n"
+"background-color: rgb(248, 255, 176);\n"
+"color: rgb(0, 0, 0);"));
+        lineEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        lineEdit_2 = new QLineEdit(frame_2);
+        lineEdit_2->setObjectName("lineEdit_2");
+        lineEdit_2->setGeometry(QRect(610, 35, 150, 20));
+        lineEdit_2->setStyleSheet(QString::fromUtf8("border: none;\n"
+"background-color: rgb(248, 255, 176);\n"
+"color: rgb(0, 0, 0);"));
+        lineEdit_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_2 = new QLabel(frame_2);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(420, 33, 150, 24));
+        label_2->setStyleSheet(QString::fromUtf8("border: none;\n"
+"color: rgb(0, 0, 0);"));
+        label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        frame_3 = new QFrame(centralwidget);
+        frame_3->setObjectName("frame_3");
+        frame_3->setGeometry(QRect(0, 110, 800, 100));
+        frame_3->setStyleSheet(QString::fromUtf8("border: 2px solid black;\n"
+"background-color: rgb(255, 255, 127);\n"
+"color: rgb(0, 0, 0);"));
+        frame_3->setFrameShape(QFrame::Shape::StyledPanel);
+        frame_3->setFrameShadow(QFrame::Shadow::Raised);
+        line_3 = new QFrame(frame_3);
+        line_3->setObjectName("line_3");
+        line_3->setGeometry(QRect(400, 0, 3, 100));
+        line_3->setFrameShape(QFrame::Shape::VLine);
+        line_3->setFrameShadow(QFrame::Shadow::Sunken);
+        label_4 = new QLabel(frame_3);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(68, 38, 120, 24));
+        label_4->setStyleSheet(QString::fromUtf8("border: none;\n"
+"color: rgb(0, 0, 0);"));
+        label_4->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        spinBox = new QSpinBox(frame_3);
+        spinBox->setObjectName("spinBox");
+        spinBox->setGeometry(QRect(212, 38, 100, 24));
+        spinBox->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
+"    background-color: rgb(255, 255, 153);\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button {\n"
+"    width: 16px;\n"
+"}\n"
+"\n"
+"QSpinBox::down-button {\n"
+"    width: 16px;\n"
+"}\n"
+""));
+        spinBox->setWrapping(true);
+        spinBox->setProperty("showGroupSeparator", QVariant(false));
+        spinBox_2 = new QSpinBox(frame_3);
+        spinBox_2->setObjectName("spinBox_2");
+        spinBox_2->setGeometry(QRect(610, 18, 75, 24));
+        spinBox_2->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
+"    background-color: rgb(255, 255, 153);\n"
+"	border: none;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button {\n"
+"    width: 16px;\n"
+"}\n"
+"\n"
+"QSpinBox::down-button {\n"
+"    width: 16px;\n"
+"}\n"
+""));
+        spinBox_2->setWrapping(true);
+        spinBox_2->setProperty("showGroupSeparator", QVariant(false));
+        label_5 = new QLabel(frame_3);
+        label_5->setObjectName("label_5");
+        label_5->setGeometry(QRect(445, 18, 120, 24));
+        label_5->setStyleSheet(QString::fromUtf8("border: none;\n"
+"color: rgb(0, 0, 0);"));
+        label_5->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_6 = new QLabel(frame_3);
+        label_6->setObjectName("label_6");
+        label_6->setGeometry(QRect(730, 18, 25, 24));
+        label_6->setStyleSheet(QString::fromUtf8("border: none;\n"
+"color: rgb(0, 0, 0);"));
+        label_6->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        pushButton = new QPushButton(frame_3);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(550, 58, 100, 24));
+        pushButton->setStyleSheet(QString::fromUtf8("border: 1px solid black;\n"
+"background-color: rgb(248, 255, 176);"));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setGeometry(QRect(300, 220, 200, 24));
+        pushButton_2->setStyleSheet(QString::fromUtf8("border: 1px solid black;\n"
+"background-color: rgb(255, 255, 127);\n"
+"color: rgb(0,0,0);\n"
+""));
+        tablaMascaras = new QTableWidget(centralwidget);
+        if (tablaMascaras->columnCount() < 2)
+            tablaMascaras->setColumnCount(2);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tablaMascaras->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tablaMascaras->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        if (tablaMascaras->rowCount() < 10)
+            tablaMascaras->setRowCount(10);
+        tablaMascaras->setObjectName("tablaMascaras");
+        tablaMascaras->setGeometry(QRect(10, 260, 780, 200));
+        tablaMascaras->setTabletTracking(false);
+        tablaMascaras->setAcceptDrops(false);
+        tablaMascaras->setAutoFillBackground(false);
+        tablaMascaras->setStyleSheet(QString::fromUtf8("QHeaderView::section {\n"
+"    background-color: rgb(255, 255, 153); /* mismo amarillo */\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"    border: 1px solid black;\n"
+"}\n"
+"\n"
+""));
+        tablaMascaras->setFrameShape(QFrame::Shape::NoFrame);
+        tablaMascaras->setFrameShadow(QFrame::Shadow::Plain);
+        tablaMascaras->setAlternatingRowColors(false);
+        tablaMascaras->setSortingEnabled(false);
+        tablaMascaras->setRowCount(10);
+        tablaMascaras->setColumnCount(2);
+        tablaMascaras->horizontalHeader()->setCascadingSectionResizes(false);
+        tablaMascaras->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
+        tablaMascaras->horizontalHeader()->setStretchLastSection(false);
+        tablaMascaras->verticalHeader()->setCascadingSectionResizes(false);
+        tablaMascaras->verticalHeader()->setProperty("showSortIndicator", QVariant(false));
+        tablaMascaras->verticalHeader()->setStretchLastSection(false);
+        tablaSubRedes = new QTableWidget(centralwidget);
+        if (tablaSubRedes->columnCount() < 7)
+            tablaSubRedes->setColumnCount(7);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tablaSubRedes->setHorizontalHeaderItem(0, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        tablaSubRedes->setHorizontalHeaderItem(1, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tablaSubRedes->setHorizontalHeaderItem(2, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tablaSubRedes->setHorizontalHeaderItem(3, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tablaSubRedes->setHorizontalHeaderItem(4, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        tablaSubRedes->setHorizontalHeaderItem(5, __qtablewidgetitem7);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        tablaSubRedes->setHorizontalHeaderItem(6, __qtablewidgetitem8);
+        if (tablaSubRedes->rowCount() < 11)
+            tablaSubRedes->setRowCount(11);
+        tablaSubRedes->setObjectName("tablaSubRedes");
+        tablaSubRedes->setGeometry(QRect(10, 470, 780, 200));
+        tablaSubRedes->setTabletTracking(false);
+        tablaSubRedes->setAcceptDrops(false);
+        tablaSubRedes->setAutoFillBackground(false);
+        tablaSubRedes->setStyleSheet(QString::fromUtf8("QHeaderView::section {\n"
+"    background-color: rgb(255, 255, 153); /* mismo amarillo */\n"
+"    color: black;\n"
+"    font-weight: bold;\n"
+"    border: 1px solid black;\n"
+"}\n"
+"\n"
+""));
+        tablaSubRedes->setFrameShape(QFrame::Shape::NoFrame);
+        tablaSubRedes->setFrameShadow(QFrame::Shadow::Plain);
+        tablaSubRedes->setAlternatingRowColors(false);
+        tablaSubRedes->setSortingEnabled(false);
+        tablaSubRedes->setRowCount(11);
+        tablaSubRedes->setColumnCount(7);
+        tablaSubRedes->horizontalHeader()->setCascadingSectionResizes(false);
+        tablaSubRedes->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
+        tablaSubRedes->horizontalHeader()->setStretchLastSection(false);
+        tablaSubRedes->verticalHeader()->setCascadingSectionResizes(false);
+        tablaSubRedes->verticalHeader()->setProperty("showSortIndicator", QVariant(false));
+        tablaSubRedes->verticalHeader()->setStretchLastSection(false);
+        MainWindow->setCentralWidget(centralwidget);
+        statusbar = new QStatusBar(MainWindow);
+        statusbar->setObjectName("statusbar");
+        MainWindow->setStatusBar(statusbar);
+
+        retranslateUi(MainWindow);
+
+        QMetaObject::connectSlotsByName(MainWindow);
+    } // setupUi
+
+    void retranslateUi(QMainWindow *MainWindow)
+    {
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "CALCULADORA DE SUBREDES", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "CALCULADORA DE SUBREDES", nullptr));
+        radioButton->setText(QCoreApplication::translate("MainWindow", "POR SUBREDES", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("MainWindow", "POR HOSTS (VLSM)", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "IP:", nullptr));
+        lineEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "0.0.0.0", nullptr));
+        lineEdit_2->setPlaceholderText(QCoreApplication::translate("MainWindow", "/0", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "M\303\241scara de subred:", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "Cantidad:", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "Cantidad:", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "[]", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "AGREGAR", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "CALCULAR", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tablaMascaras->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "MASCARA DECIMAL", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tablaMascaras->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("MainWindow", "MASCARA RECORTADA", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = tablaSubRedes->horizontalHeaderItem(0);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "IP RED", nullptr));
+        QTableWidgetItem *___qtablewidgetitem3 = tablaSubRedes->horizontalHeaderItem(1);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "IP 1", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tablaSubRedes->horizontalHeaderItem(2);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "IP FINAL", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = tablaSubRedes->horizontalHeaderItem(3);
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("MainWindow", "IP BROADCAST", nullptr));
+        QTableWidgetItem *___qtablewidgetitem6 = tablaSubRedes->horizontalHeaderItem(4);
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "HOSTS", nullptr));
+        QTableWidgetItem *___qtablewidgetitem7 = tablaSubRedes->horizontalHeaderItem(5);
+        ___qtablewidgetitem7->setText(QCoreApplication::translate("MainWindow", "USADOS", nullptr));
+        QTableWidgetItem *___qtablewidgetitem8 = tablaSubRedes->horizontalHeaderItem(6);
+        ___qtablewidgetitem8->setText(QCoreApplication::translate("MainWindow", "DESPERDICIO", nullptr));
+    } // retranslateUi
+
+};
+
+namespace Ui {
+    class MainWindow: public Ui_MainWindow {};
+} // namespace Ui
+
+QT_END_NAMESPACE
+
+#endif // UI_MAINWINDOW_H
