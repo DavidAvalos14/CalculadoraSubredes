@@ -17,6 +17,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+
+    void on_Btc_Calcular_clicked();
+
+    void on_LE_IP_textChanged(const QString &arg1);
+
+    void on_RB_Hosts_toggled(bool checked);
+
+    void on_RB_Subredes_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
 };

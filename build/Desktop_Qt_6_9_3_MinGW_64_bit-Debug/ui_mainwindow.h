@@ -34,21 +34,21 @@ public:
     QFrame *frame_2;
     QFrame *line;
     QFrame *line_2;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
+    QRadioButton *RB_Subredes;
+    QRadioButton *RB_Hosts;
     QLabel *label;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
+    QLineEdit *LE_IP;
     QLabel *label_2;
+    QSpinBox *SB_Mascara;
     QFrame *frame_3;
     QFrame *line_3;
     QLabel *label_4;
-    QSpinBox *spinBox;
-    QSpinBox *spinBox_2;
+    QSpinBox *SB_CantidadRedes;
+    QSpinBox *SB_CantidadHosts;
     QLabel *label_5;
-    QLabel *label_6;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QLabel *lab_numSubred;
+    QPushButton *Btn_Agregar;
+    QPushButton *Btc_Calcular;
     QTableWidget *tablaMascaras;
     QTableWidget *tablaSubRedes;
     QStatusBar *statusbar;
@@ -95,15 +95,16 @@ public:
         line_2->setGeometry(QRect(0, 30, 800, 3));
         line_2->setFrameShape(QFrame::Shape::HLine);
         line_2->setFrameShadow(QFrame::Shadow::Sunken);
-        radioButton = new QRadioButton(frame_2);
-        radioButton->setObjectName("radioButton");
-        radioButton->setGeometry(QRect(100, 2, 200, 26));
-        radioButton->setStyleSheet(QString::fromUtf8("border: none;\n"
+        RB_Subredes = new QRadioButton(frame_2);
+        RB_Subredes->setObjectName("RB_Subredes");
+        RB_Subredes->setGeometry(QRect(100, 2, 200, 26));
+        RB_Subredes->setStyleSheet(QString::fromUtf8("border: none;\n"
 "color: rgb(0, 0, 0);"));
-        radioButton_2 = new QRadioButton(frame_2);
-        radioButton_2->setObjectName("radioButton_2");
-        radioButton_2->setGeometry(QRect(500, 2, 200, 26));
-        radioButton_2->setStyleSheet(QString::fromUtf8("border: none;\n"
+        RB_Subredes->setChecked(true);
+        RB_Hosts = new QRadioButton(frame_2);
+        RB_Hosts->setObjectName("RB_Hosts");
+        RB_Hosts->setGeometry(QRect(500, 2, 200, 26));
+        RB_Hosts->setStyleSheet(QString::fromUtf8("border: none;\n"
 "color: rgb(0, 0, 0);"));
         label = new QLabel(frame_2);
         label->setObjectName("label");
@@ -111,26 +112,42 @@ public:
         label->setStyleSheet(QString::fromUtf8("border: none;\n"
 "color: rgb(0, 0, 0);"));
         label->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        lineEdit = new QLineEdit(frame_2);
-        lineEdit->setObjectName("lineEdit");
-        lineEdit->setGeometry(QRect(230, 35, 150, 20));
-        lineEdit->setStyleSheet(QString::fromUtf8("border: none;\n"
+        LE_IP = new QLineEdit(frame_2);
+        LE_IP->setObjectName("LE_IP");
+        LE_IP->setGeometry(QRect(230, 35, 150, 20));
+        LE_IP->setStyleSheet(QString::fromUtf8("border: none;\n"
 "background-color: rgb(248, 255, 176);\n"
 "color: rgb(0, 0, 0);"));
-        lineEdit->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        lineEdit_2 = new QLineEdit(frame_2);
-        lineEdit_2->setObjectName("lineEdit_2");
-        lineEdit_2->setGeometry(QRect(610, 35, 150, 20));
-        lineEdit_2->setStyleSheet(QString::fromUtf8("border: none;\n"
-"background-color: rgb(248, 255, 176);\n"
-"color: rgb(0, 0, 0);"));
-        lineEdit_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        LE_IP->setAlignment(Qt::AlignmentFlag::AlignCenter);
         label_2 = new QLabel(frame_2);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(420, 33, 150, 24));
         label_2->setStyleSheet(QString::fromUtf8("border: none;\n"
 "color: rgb(0, 0, 0);"));
         label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        SB_Mascara = new QSpinBox(frame_2);
+        SB_Mascara->setObjectName("SB_Mascara");
+        SB_Mascara->setEnabled(true);
+        SB_Mascara->setGeometry(QRect(610, 33, 150, 24));
+        SB_Mascara->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
+"    background-color: rgb(255, 255, 153);\n"
+"	border: none;\n"
+"color: rgb(0, 0, 0);\n"
+"}\n"
+"\n"
+"QSpinBox::up-button {\n"
+"    width: 16px;\n"
+"}\n"
+"\n"
+"QSpinBox::down-button {\n"
+"    width: 16px;\n"
+"}\n"
+""));
+        SB_Mascara->setWrapping(true);
+        SB_Mascara->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        SB_Mascara->setProperty("showGroupSeparator", QVariant(false));
+        SB_Mascara->setMinimum(8);
+        SB_Mascara->setMaximum(31);
         frame_3 = new QFrame(centralwidget);
         frame_3->setObjectName("frame_3");
         frame_3->setGeometry(QRect(0, 110, 800, 100));
@@ -150,10 +167,10 @@ public:
         label_4->setStyleSheet(QString::fromUtf8("border: none;\n"
 "color: rgb(0, 0, 0);"));
         label_4->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        spinBox = new QSpinBox(frame_3);
-        spinBox->setObjectName("spinBox");
-        spinBox->setGeometry(QRect(212, 38, 100, 24));
-        spinBox->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
+        SB_CantidadRedes = new QSpinBox(frame_3);
+        SB_CantidadRedes->setObjectName("SB_CantidadRedes");
+        SB_CantidadRedes->setGeometry(QRect(212, 38, 100, 24));
+        SB_CantidadRedes->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
 "    background-color: rgb(255, 255, 153);\n"
 "	border: none;\n"
 "}\n"
@@ -166,12 +183,13 @@ public:
 "    width: 16px;\n"
 "}\n"
 ""));
-        spinBox->setWrapping(true);
-        spinBox->setProperty("showGroupSeparator", QVariant(false));
-        spinBox_2 = new QSpinBox(frame_3);
-        spinBox_2->setObjectName("spinBox_2");
-        spinBox_2->setGeometry(QRect(610, 18, 75, 24));
-        spinBox_2->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
+        SB_CantidadRedes->setWrapping(true);
+        SB_CantidadRedes->setProperty("showGroupSeparator", QVariant(false));
+        SB_CantidadHosts = new QSpinBox(frame_3);
+        SB_CantidadHosts->setObjectName("SB_CantidadHosts");
+        SB_CantidadHosts->setEnabled(true);
+        SB_CantidadHosts->setGeometry(QRect(610, 18, 75, 24));
+        SB_CantidadHosts->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
 "    background-color: rgb(255, 255, 153);\n"
 "	border: none;\n"
 "}\n"
@@ -184,29 +202,30 @@ public:
 "    width: 16px;\n"
 "}\n"
 ""));
-        spinBox_2->setWrapping(true);
-        spinBox_2->setProperty("showGroupSeparator", QVariant(false));
+        SB_CantidadHosts->setWrapping(true);
+        SB_CantidadHosts->setProperty("showGroupSeparator", QVariant(false));
         label_5 = new QLabel(frame_3);
         label_5->setObjectName("label_5");
         label_5->setGeometry(QRect(445, 18, 120, 24));
         label_5->setStyleSheet(QString::fromUtf8("border: none;\n"
 "color: rgb(0, 0, 0);"));
         label_5->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        label_6 = new QLabel(frame_3);
-        label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(730, 18, 25, 24));
-        label_6->setStyleSheet(QString::fromUtf8("border: none;\n"
+        lab_numSubred = new QLabel(frame_3);
+        lab_numSubred->setObjectName("lab_numSubred");
+        lab_numSubred->setGeometry(QRect(730, 18, 25, 24));
+        lab_numSubred->setStyleSheet(QString::fromUtf8("border: none;\n"
 "color: rgb(0, 0, 0);"));
-        label_6->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        pushButton = new QPushButton(frame_3);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(550, 58, 100, 24));
-        pushButton->setStyleSheet(QString::fromUtf8("border: 1px solid black;\n"
+        lab_numSubred->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        Btn_Agregar = new QPushButton(frame_3);
+        Btn_Agregar->setObjectName("Btn_Agregar");
+        Btn_Agregar->setEnabled(true);
+        Btn_Agregar->setGeometry(QRect(550, 58, 100, 24));
+        Btn_Agregar->setStyleSheet(QString::fromUtf8("border: 1px solid black;\n"
 "background-color: rgb(248, 255, 176);"));
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(300, 220, 200, 24));
-        pushButton_2->setStyleSheet(QString::fromUtf8("border: 1px solid black;\n"
+        Btc_Calcular = new QPushButton(centralwidget);
+        Btc_Calcular->setObjectName("Btc_Calcular");
+        Btc_Calcular->setGeometry(QRect(300, 220, 200, 24));
+        Btc_Calcular->setStyleSheet(QString::fromUtf8("border: 1px solid black;\n"
 "background-color: rgb(255, 255, 127);\n"
 "color: rgb(0,0,0);\n"
 ""));
@@ -217,8 +236,8 @@ public:
         tablaMascaras->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         tablaMascaras->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        if (tablaMascaras->rowCount() < 10)
-            tablaMascaras->setRowCount(10);
+        if (tablaMascaras->rowCount() < 1)
+            tablaMascaras->setRowCount(1);
         tablaMascaras->setObjectName("tablaMascaras");
         tablaMascaras->setGeometry(QRect(10, 260, 780, 200));
         tablaMascaras->setTabletTracking(false);
@@ -236,7 +255,7 @@ public:
         tablaMascaras->setFrameShadow(QFrame::Shadow::Plain);
         tablaMascaras->setAlternatingRowColors(false);
         tablaMascaras->setSortingEnabled(false);
-        tablaMascaras->setRowCount(10);
+        tablaMascaras->setRowCount(1);
         tablaMascaras->setColumnCount(2);
         tablaMascaras->horizontalHeader()->setCascadingSectionResizes(false);
         tablaMascaras->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
@@ -261,8 +280,8 @@ public:
         tablaSubRedes->setHorizontalHeaderItem(5, __qtablewidgetitem7);
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
         tablaSubRedes->setHorizontalHeaderItem(6, __qtablewidgetitem8);
-        if (tablaSubRedes->rowCount() < 11)
-            tablaSubRedes->setRowCount(11);
+        if (tablaSubRedes->rowCount() < 1)
+            tablaSubRedes->setRowCount(1);
         tablaSubRedes->setObjectName("tablaSubRedes");
         tablaSubRedes->setGeometry(QRect(10, 470, 780, 200));
         tablaSubRedes->setTabletTracking(false);
@@ -280,7 +299,7 @@ public:
         tablaSubRedes->setFrameShadow(QFrame::Shadow::Plain);
         tablaSubRedes->setAlternatingRowColors(false);
         tablaSubRedes->setSortingEnabled(false);
-        tablaSubRedes->setRowCount(11);
+        tablaSubRedes->setRowCount(1);
         tablaSubRedes->setColumnCount(7);
         tablaSubRedes->horizontalHeader()->setCascadingSectionResizes(false);
         tablaSubRedes->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
@@ -302,17 +321,16 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "CALCULADORA DE SUBREDES", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "CALCULADORA DE SUBREDES", nullptr));
-        radioButton->setText(QCoreApplication::translate("MainWindow", "POR SUBREDES", nullptr));
-        radioButton_2->setText(QCoreApplication::translate("MainWindow", "POR HOSTS (VLSM)", nullptr));
+        RB_Subredes->setText(QCoreApplication::translate("MainWindow", "POR SUBREDES", nullptr));
+        RB_Hosts->setText(QCoreApplication::translate("MainWindow", "POR HOSTS (VLSM)", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "IP:", nullptr));
-        lineEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "0.0.0.0", nullptr));
-        lineEdit_2->setPlaceholderText(QCoreApplication::translate("MainWindow", "/0", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "M\303\241scara de subred:", nullptr));
+        LE_IP->setPlaceholderText(QCoreApplication::translate("MainWindow", "0.0.0.0", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "M\303\241scara de subred: /", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Cantidad:", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Cantidad:", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "[]", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "AGREGAR", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "CALCULAR", nullptr));
+        lab_numSubred->setText(QCoreApplication::translate("MainWindow", "[]", nullptr));
+        Btn_Agregar->setText(QCoreApplication::translate("MainWindow", "AGREGAR", nullptr));
+        Btc_Calcular->setText(QCoreApplication::translate("MainWindow", "CALCULAR", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tablaMascaras->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "MASCARA DECIMAL", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tablaMascaras->horizontalHeaderItem(1);
