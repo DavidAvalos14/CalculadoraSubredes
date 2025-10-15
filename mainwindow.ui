@@ -110,7 +110,7 @@ border: 2px solid black;
       <enum>Qt::Orientation::Horizontal</enum>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton">
+    <widget class="QRadioButton" name="RB_Subredes">
      <property name="geometry">
       <rect>
        <x>100</x>
@@ -126,8 +126,11 @@ color: rgb(0, 0, 0);</string>
      <property name="text">
       <string>POR SUBREDES</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_2">
+    <widget class="QRadioButton" name="RB_Hosts">
      <property name="geometry">
       <rect>
        <x>500</x>
@@ -164,7 +167,7 @@ color: rgb(0, 0, 0);</string>
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="LE_IP">
      <property name="geometry">
       <rect>
        <x>230</x>
@@ -185,27 +188,6 @@ color: rgb(0, 0, 0);</string>
       <string>0.0.0.0</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>610</x>
-       <y>35</y>
-       <width>150</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: none;
-background-color: rgb(248, 255, 176);
-color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
-     <property name="placeholderText">
-      <string>/0</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
@@ -220,10 +202,54 @@ color: rgb(0, 0, 0);</string>
 color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
-      <string>Máscara de subred:</string>
+      <string>Máscara de subred: /</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="SB_Mascara">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>33</y>
+       <width>150</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSpinBox {
+    background-color: rgb(255, 255, 153);
+	border: none;
+color: rgb(0, 0, 0);
+}
+
+QSpinBox::up-button {
+    width: 16px;
+}
+
+QSpinBox::down-button {
+    width: 16px;
+}
+</string>
+     </property>
+     <property name="wrapping">
+      <bool>true</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+     <property name="showGroupSeparator" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="minimum">
+      <number>8</number>
+     </property>
+     <property name="maximum">
+      <number>31</number>
      </property>
     </widget>
    </widget>
@@ -280,7 +306,7 @@ color: rgb(0, 0, 0);</string>
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QSpinBox" name="spinBox">
+    <widget class="QSpinBox" name="SB_CantidadRedes">
      <property name="geometry">
       <rect>
        <x>212</x>
@@ -311,7 +337,10 @@ QSpinBox::down-button {
       <bool>false</bool>
      </property>
     </widget>
-    <widget class="QSpinBox" name="spinBox_2">
+    <widget class="QSpinBox" name="SB_CantidadHosts">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>610</x>
@@ -362,7 +391,7 @@ color: rgb(0, 0, 0);</string>
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="lab_numSubred">
      <property name="geometry">
       <rect>
        <x>730</x>
@@ -382,7 +411,10 @@ color: rgb(0, 0, 0);</string>
       <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="Btn_Agregar">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>550</x>
@@ -400,7 +432,7 @@ background-color: rgb(248, 255, 176);</string>
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="Btc_Calcular">
     <property name="geometry">
      <rect>
       <x>300</x>
