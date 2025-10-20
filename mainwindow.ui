@@ -405,7 +405,7 @@ color: rgb(0, 0, 0);</string>
 color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
-      <string>[]</string>
+      <string>[1]</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -476,6 +476,8 @@ color: rgb(0,0,0);
     font-weight: bold;
     border: 1px solid black;
 }
+
+QTableWidget { color: black; }
 
 </string>
     </property>
@@ -552,6 +554,8 @@ color: rgb(0,0,0);
     font-weight: bold;
     border: 1px solid black;
 }
+
+QTableWidget { color: black; }
 
 </string>
     </property>
