@@ -45,7 +45,16 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "arg1",
         "on_RB_Hosts_toggled",
         "checked",
-        "on_RB_Subredes_toggled"
+        "on_RB_Subredes_toggled",
+        "calculoSubredes",
+        "mascara",
+        "subRedes",
+        "calculoVLSM",
+        "IP",
+        "vector<pair<int,int>>",
+        "hosts",
+        "on_Btn_Agregar_clicked",
+        "mascaraDecimal"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -62,6 +71,20 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         // Slot 'on_RB_Subredes_toggled'
         QtMocHelpers::SlotData<void(bool)>(7, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Bool, 6 },
+        }}),
+        // Slot 'calculoSubredes'
+        QtMocHelpers::SlotData<void(int, int)>(8, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 9 }, { QMetaType::Int, 10 },
+        }}),
+        // Slot 'calculoVLSM'
+        QtMocHelpers::SlotData<void(QString, int, vector<pair<int,int>>)>(11, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 12 }, { QMetaType::Int, 9 }, { 0x80000000 | 13, 14 },
+        }}),
+        // Slot 'on_Btn_Agregar_clicked'
+        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'mascaraDecimal'
+        QtMocHelpers::SlotData<QString(int)>(16, 2, QMC::AccessPrivate, QMetaType::QString, {{
+            { QMetaType::Int, 9 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -90,6 +113,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->on_LE_IP_textChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 2: _t->on_RB_Hosts_toggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
         case 3: _t->on_RB_Subredes_toggled((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 4: _t->calculoSubredes((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2]))); break;
+        case 5: _t->calculoVLSM((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<vector<pair<int,int>>>>(_a[3]))); break;
+        case 6: _t->on_Btn_Agregar_clicked(); break;
+        case 7: { QString _r = _t->mascaraDecimal((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
@@ -114,14 +142,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 8;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 8;
     }
     return _id;
 }

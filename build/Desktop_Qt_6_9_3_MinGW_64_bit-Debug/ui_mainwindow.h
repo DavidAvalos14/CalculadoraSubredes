@@ -250,6 +250,8 @@ public:
 "    border: 1px solid black;\n"
 "}\n"
 "\n"
+"QTableWidget { color: black; }\n"
+"\n"
 ""));
         tablaMascaras->setFrameShape(QFrame::Shape::NoFrame);
         tablaMascaras->setFrameShadow(QFrame::Shadow::Plain);
@@ -294,6 +296,8 @@ public:
 "    border: 1px solid black;\n"
 "}\n"
 "\n"
+"QTableWidget { color: black; }\n"
+"\n"
 ""));
         tablaSubRedes->setFrameShape(QFrame::Shape::NoFrame);
         tablaSubRedes->setFrameShadow(QFrame::Shadow::Plain);
@@ -328,7 +332,7 @@ public:
         label_2->setText(QCoreApplication::translate("MainWindow", "M\303\241scara de subred: /", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Cantidad:", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Cantidad:", nullptr));
-        lab_numSubred->setText(QCoreApplication::translate("MainWindow", "[]", nullptr));
+        lab_numSubred->setText(QCoreApplication::translate("MainWindow", "[1]", nullptr));
         Btn_Agregar->setText(QCoreApplication::translate("MainWindow", "AGREGAR", nullptr));
         Btc_Calcular->setText(QCoreApplication::translate("MainWindow", "CALCULAR", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tablaMascaras->horizontalHeaderItem(0);
