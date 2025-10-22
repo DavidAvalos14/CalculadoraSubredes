@@ -105,7 +105,7 @@ void MainWindow::on_Btc_Calcular_clicked()
         subRedes = ui->SB_CantidadRedes->text().toInt();
         calculoSubredes(mascara, subRedes);
     } else if(ui->RB_Hosts->isChecked()) {
-        calculoVLSM(IP, mascara, hosts);
+        calculoVLSM(mascara, hosts);
     }
 }
 
@@ -178,30 +178,62 @@ void MainWindow::calculoSubredes(int mascara, int subRedes)
 
     // 4. Llenar con los valores dicha tabla
     ui->tablaSubRedes->setColumnCount(7);
-    ui->tablaSubRedes->setRowCount(10);
+    ui->tablaSubRedes->setRowCount(subRedes);
 
-    QString ips = QString::number(octetos[0]) + "." + QString::number(octetos[1]) + "." + QString::number(octetos[2]) + ".";
-    int aux = 0;
+    QString ips;
 
-    for(int i=0; i < numSubred; i++) {
-        ui->tablaSubRedes->setItem(i, 0, new QTableWidgetItem(ips + QString::number(aux)));
-        aux += 1;
-        ui->tablaSubRedes->setItem(i, 1, new QTableWidgetItem(ips + QString::number(aux)));
-        aux += salto - 3;
-        ui->tablaSubRedes->setItem(i, 2, new QTableWidgetItem(ips + QString::number(aux)));
-        aux += 1;
-        ui->tablaSubRedes->setItem(i, 3, new QTableWidgetItem(ips + QString::number(aux)));
-        aux += 1;
+    //cout << (mascara-N) << endl;
+
+    switch((mascara-N)/8) {
+    case 0:
+        // No se pueden subnetear con mascaras menores a 8
+        break;
+
+
+    case 1:
+        ips = QString::number(octetos[0]) + ".";
+        break;
+
+
+    case 2:
+        ips = QString::number(octetos[0]) + "." + QString::number(octetos[1]) + ".";
+        break;
+
+
+    case 3:
+        ips = QString::number(octetos[0]) + "." + QString::number(octetos[1]) + "." + QString::number(octetos[2]) + ".";
+        break;
+
+
+    default:
+        // Error
+        break;
+
+
     }
 
-    // Notas: La lógica principal esta ya establecida, pero tiene aún muchas validaciones
-    // Que considerar, como por ejemplo que el avance sea en mas de un octecto,
-    // detalles a corregir
+    //int aux = 0;
+
+    for(int i=0; i < subRedes; i++) {
+        ui->tablaSubRedes->setItem(i, 0, new QTableWidgetItem(avance(octetos, 0)));
+        ips = avance(octetos, 1);//octetos[3] += 1;
+        ui->tablaSubRedes->setItem(i, 1, new QTableWidgetItem(ips));
+        ips = avance(octetos, salto - 3);//octetos[3] += salto - 3;
+        ui->tablaSubRedes->setItem(i, 2, new QTableWidgetItem(ips));
+        ips = avance(octetos, 1);//octetos[3] += 1;
+        ui->tablaSubRedes->setItem(i, 3, new QTableWidgetItem(ips));
+        ips = avance(octetos, 1);//octetos[3] += 1;
+    }
+
+    // Notas: Solo falta definir que no se pase de la cantidad disponible
+
+    // El octeto o octetos en los que te puedes mover, se definen en base 255 menos los
+    // hosts que puede almacenar, no puede empezar en un numero mayor.
 
 }
 
 // Cálculo en función de nodos
-void MainWindow::calculoVLSM(QString IP, int mascara, vector<pair<int, int>> hosts)
+void MainWindow::calculoVLSM(int mascara, vector<pair<int, int>> hosts)
 {
     // 1. Ordenar de mayor a menor las subredes solicitadas (guardadas en hosts)
     sort(hosts.rbegin(), hosts.rend());
@@ -229,8 +261,9 @@ void MainWindow::calculoVLSM(QString IP, int mascara, vector<pair<int, int>> hos
     ui->tablaMascaras->setColumnCount(2);
     ui->tablaMascaras->setRowCount(hosts.size());
 
-    for(auto h: hosts) {
-        static int ren = 0;
+    int ren = 0;
+
+    for(auto h: hosts) {  
         ui->tablaMascaras->setItem(ren, 0, new QTableWidgetItem(mascaraDecimal(32-h.second)));
         ui->tablaMascaras->setItem(ren++, 1, new QTableWidgetItem(QString::number(32-h.second)));
     }
@@ -239,18 +272,49 @@ void MainWindow::calculoVLSM(QString IP, int mascara, vector<pair<int, int>> hos
     ui->tablaSubRedes->setColumnCount(7);
     ui->tablaSubRedes->setRowCount(hosts.size());
 
-    QString ips = QString::number(octetos[0]) + "." + QString::number(octetos[1]) + "." + QString::number(octetos[2]) + ".";
-    int aux = 0;
+    QString ips;
+
+    //cout << (mascara) << endl;
+
+    switch((mascara)/8) {
+    case 0:
+        // No se pueden subnetear con mascaras menores a 8
+        break;
+
+
+    case 1:
+        ips = QString::number(octetos[0]) + ".";
+        break;
+
+
+    case 2:
+        ips = QString::number(octetos[0]) + "." + QString::number(octetos[1]) + ".";
+        break;
+
+
+    case 3:
+        ips = QString::number(octetos[0]) + "." + QString::number(octetos[1]) + "." + QString::number(octetos[2]) + ".";
+        break;
+
+
+    default:
+        // Error
+        break;
+    }
+
     int i=0;
     for(auto h: hosts) {
-        ui->tablaSubRedes->setItem(i, 0, new QTableWidgetItem(ips + QString::number(aux)));
-        aux += 1;
-        ui->tablaSubRedes->setItem(i, 1, new QTableWidgetItem(ips + QString::number(aux)));
-        aux += saltos[i] - 1;
-        ui->tablaSubRedes->setItem(i, 2, new QTableWidgetItem(ips + QString::number(aux)));
-        aux += 1;
-        ui->tablaSubRedes->setItem(i, 3, new QTableWidgetItem(ips + QString::number(aux)));
-        aux += 1;
+        ui->tablaSubRedes->setItem(i, 0, new QTableWidgetItem(avance(octetos, 0)));
+        ips = avance(octetos, 1);
+        ui->tablaSubRedes->setItem(i, 1, new QTableWidgetItem(ips));
+        //cout << "salto: " << saltos[i] << endl;
+        //cout << saltos[i] << endl;
+        ips = avance(octetos, (saltos[i] - 1)); //octetos[3] += saltos[i] - 1;
+        //cout << "octeto: " << octetos[3];
+        ui->tablaSubRedes->setItem(i, 2, new QTableWidgetItem(ips));
+        ips = avance(octetos, 1); //octetos[3] += 1;
+        ui->tablaSubRedes->setItem(i, 3, new QTableWidgetItem(ips));
+        ips = avance(octetos, 1); //octetos[3] += 1;
         ui->tablaSubRedes->setItem(i, 4, new QTableWidgetItem(QString::number(saltos[i])));
         ui->tablaSubRedes->setItem(i, 5, new QTableWidgetItem(QString::number(h.first)));
         ui->tablaSubRedes->setItem(i, 6, new QTableWidgetItem(QString::number(saltos[i] - h.first)));
@@ -262,8 +326,8 @@ void MainWindow::calculoVLSM(QString IP, int mascara, vector<pair<int, int>> hos
     // lo ideal es tenerlos como métodos y simplemente llamarlos
     // eventualmente, en una limpieza de código así se hará
 
-    // Igualmente tiene muchas validaciones aun que trabajar, y
-    // lo más importante se trata de calcular cuando el avance es en más de un octeto
+    // Ya se mueven correctamente los octetos, falta validar que
+    // si quepan las subredes solicitadas
 
 }
 
@@ -307,5 +371,82 @@ QString MainWindow::mascaraDecimal(int mascara)
     }
 
     return mascaraDec;
+}
+
+QString MainWindow::avance(int octetos[4], int avance)
+{
+    int ajuste = avance % 256;
+    int avance2 = avance / 256;
+
+    int ajuste3 = avance2 % 256;
+    int avance3 = avance2 / 256;
+
+    int ajuste4 = avance3 % 256;
+    //int avance4 = avance3 / 256;
+
+    if(octetos[3] + avance > 255) {
+        //cout << "Entra a l ajuste mal";
+        //ajuste = octetos[3] + avance - 255;
+        if(octetos[3] + ajuste > 255) {
+            octetos[3] = octetos[3] + ajuste - 256;
+            avance2++;
+            ajuste3 = avance2 % 256;
+            avance3 = avance2 / 256;
+        } else {
+            octetos[3] += ajuste;
+        }
+        if(octetos[2] + avance2  > 255) {
+            if(octetos[2] + ajuste3  > 255) {
+                octetos[2] = octetos[2] + ajuste3 - 256;
+                avance3++;
+                ajuste4 = avance3 % 256;
+            } else {
+                octetos[2] += ajuste3;
+            }
+            if(octetos[1] + 1 > 255) {
+                cout << "Clase de error" << endl;
+            } else {
+                //octetos[1]++;
+                if(octetos[1] + ajuste4 > 255) {
+                    octetos[1] = octetos[1] + ajuste4 - 256;
+                    // Error, el segundo octeto no puedo avanzar mas alla de 255
+                } else {
+                    octetos[1] += ajuste4;
+                }
+            }
+        } else {
+            octetos[2] += avance2;
+        }
+    } else {
+        octetos[3] += avance;
+    }
+
+    return QString::number(octetos[0]) + "." + QString::number(octetos[1]) + "." + QString::number(octetos[2]) + "." + QString::number(octetos[3]);
+}
+
+
+void MainWindow::on_Btc_Calcular_2_clicked()
+{
+    // Limpia IP y mascara
+    ui->LE_IP->setText("");
+    ui->SB_Mascara->setValue(8);
+
+    // Limpia las cantidades
+    ui->SB_CantidadRedes->setValue(0);
+    ui->SB_CantidadHosts->setValue(0);
+    numSubred = 1;
+    ui->lab_numSubred->setText("[ " + QString::number(numSubred) + " ]");
+
+    // Limpiar las tablas
+    ui->tablaMascaras->setRowCount(0);
+    ui->tablaMascaras->clearContents();
+    ui->tablaSubRedes->setRowCount(0);
+    ui->tablaSubRedes->clearContents();
+
+    // Limpiar el vector de hosts y variables globales;
+    hosts.clear();
+    subRedes = 0;
+    IP = "";
+    mascara = 0;
 }
 

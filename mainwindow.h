@@ -43,11 +43,15 @@ private slots:
 
     void calculoSubredes(int mascara, int subRedes);
 
-    void calculoVLSM(QString IP, int mascara, vector<pair<int, int>> hosts);
+    void calculoVLSM(int mascara, vector<pair<int, int>> hosts);
 
     void on_Btn_Agregar_clicked();
 
     QString mascaraDecimal(int mascara);
+
+    QString avance(int octetos[4], int avance);
+
+    void on_Btc_Calcular_2_clicked();
 
 private:
     Ui::MainWindow *ui;
