@@ -51,6 +51,7 @@ public:
     QPushButton *Btc_Calcular;
     QTableWidget *tablaMascaras;
     QTableWidget *tablaSubRedes;
+    QPushButton *Btc_Calcular_2;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -100,12 +101,13 @@ public:
         RB_Subredes->setGeometry(QRect(100, 2, 200, 26));
         RB_Subredes->setStyleSheet(QString::fromUtf8("border: none;\n"
 "color: rgb(0, 0, 0);"));
-        RB_Subredes->setChecked(true);
+        RB_Subredes->setChecked(false);
         RB_Hosts = new QRadioButton(frame_2);
         RB_Hosts->setObjectName("RB_Hosts");
         RB_Hosts->setGeometry(QRect(500, 2, 200, 26));
         RB_Hosts->setStyleSheet(QString::fromUtf8("border: none;\n"
 "color: rgb(0, 0, 0);"));
+        RB_Hosts->setChecked(true);
         label = new QLabel(frame_2);
         label->setObjectName("label");
         label->setGeometry(QRect(40, 33, 150, 24));
@@ -148,6 +150,7 @@ public:
         SB_Mascara->setProperty("showGroupSeparator", QVariant(false));
         SB_Mascara->setMinimum(8);
         SB_Mascara->setMaximum(31);
+        SB_Mascara->setValue(24);
         frame_3 = new QFrame(centralwidget);
         frame_3->setObjectName("frame_3");
         frame_3->setGeometry(QRect(0, 110, 800, 100));
@@ -204,6 +207,8 @@ public:
 ""));
         SB_CantidadHosts->setWrapping(true);
         SB_CantidadHosts->setProperty("showGroupSeparator", QVariant(false));
+        SB_CantidadHosts->setMinimum(0);
+        SB_CantidadHosts->setMaximum(999999999);
         label_5 = new QLabel(frame_3);
         label_5->setObjectName("label_5");
         label_5->setGeometry(QRect(445, 18, 120, 24));
@@ -311,6 +316,13 @@ public:
         tablaSubRedes->verticalHeader()->setCascadingSectionResizes(false);
         tablaSubRedes->verticalHeader()->setProperty("showSortIndicator", QVariant(false));
         tablaSubRedes->verticalHeader()->setStretchLastSection(false);
+        Btc_Calcular_2 = new QPushButton(centralwidget);
+        Btc_Calcular_2->setObjectName("Btc_Calcular_2");
+        Btc_Calcular_2->setGeometry(QRect(510, 220, 100, 24));
+        Btc_Calcular_2->setStyleSheet(QString::fromUtf8("border: 1px solid black;\n"
+"background-color: rgb(255, 255, 127);\n"
+"color: rgb(0,0,0);\n"
+""));
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -353,6 +365,7 @@ public:
         ___qtablewidgetitem7->setText(QCoreApplication::translate("MainWindow", "USADOS", nullptr));
         QTableWidgetItem *___qtablewidgetitem8 = tablaSubRedes->horizontalHeaderItem(6);
         ___qtablewidgetitem8->setText(QCoreApplication::translate("MainWindow", "DESPERDICIO", nullptr));
+        Btc_Calcular_2->setText(QCoreApplication::translate("MainWindow", "LIMPIAR", nullptr));
     } // retranslateUi
 
 };
